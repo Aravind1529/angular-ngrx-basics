@@ -108,6 +108,7 @@
     "defaultCollection": "@ngrx/schematics",
     "schematicCollections": [
       "@ngrx/schematics"
-    ]
+    ],
+    "analytics": "acf00e78-5c92-4a38-90d6-3a57126810f3"
   }
 }

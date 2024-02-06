@@ -1,6 +1,6 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { Action, State, createReducer, on } from '@ngrx/store';
 import { Customer } from 'src/app/models/customer';
-import * as CustomerActions from 'src/app/customer/store/action/customer.actions';
+import * as customerActions from '../action/customer.actions';
 
 export const customerFeatureKey = 'customertest';
 
@@ -12,12 +12,21 @@ export const initialState: CustomerState = {
   customers:[]
 };
 
-export const customerReducer = createReducer(
-  initialState,
-  on(CustomerActions.addCustomers,(state:CustomerState,{customer})=>(
-    {
-      ...state,
-      customers:[...state.customers,customer]
+// export const customerReducer = createReducer(
+//   initialState,
+  
+// );
+
+export function reducer(state: CustomerState = initialState, action: customerActions.CustomerActions) {
+  switch (action.type) {
+    case customerActions.ADD_CUSTOMERS: { return State }
+    case customerActions.ADD_CUSTOMERS_SUCCESS: {
+      return {
+        ...state,
+        customers: action.payload
+      }
     }
-  ))
-);
+    case customerActions.ADD_CUSTOMERS_FAILURE: { return State }
+    default: return State
+  }
+}

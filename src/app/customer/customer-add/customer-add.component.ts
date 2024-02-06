@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Customer } from 'src/app/models/customer';
-import { addCustomers } from '../store/action/customer.actions';
-import { CustomerState } from '../store/reducer/customer.reducer';
+// import { addCustomers } from '../store/action/customer.actions';
+// import { CustomerState } from '../store/reducer/customer.reducer';
+import * as fromActions from '../store/action/customer.actions'
 
 @Component({
   selector: 'app-customer-add',
@@ -11,7 +12,7 @@ import { CustomerState } from '../store/reducer/customer.reducer';
 })
 export class CustomerAddComponent implements OnInit {
 
-  constructor(private store: Store<CustomerState>) { }
+  constructor(private store: Store<any>) { }
 
   ngOnInit(): void {
   }
@@ -19,8 +20,7 @@ export class CustomerAddComponent implements OnInit {
   addCustomer(customerName : string){
     const customer = new Customer();
     customer.name = customerName;
-    this.store.dispatch(addCustomers(customer));
-
+    this.store.dispatch(new fromActions.AddCustomers(customerName))
   }
 
 

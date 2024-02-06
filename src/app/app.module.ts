@@ -8,7 +8,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { CustomerViewComponent } from './customer/customer-view/customer-view.component';
 import { CustomerAddComponent } from './customer/customer-add/customer-add.component';
-import { customerFeatureKey, customerReducer } from './customer/store/reducer/customer.reducer';
+// import { customerFeatureKey, customerReducer } from './customer/store/reducer/customer.reducer';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { customerFeatureKey, customerReducer } from './customer/store/reducer/cu
     BrowserModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    StoreModule.forFeature(customerFeatureKey,customerReducer)
+    // StoreModule.forFeature(customerFeatureKey,customerReducer)
   ],
   providers: [],
   bootstrap: [AppComponent]

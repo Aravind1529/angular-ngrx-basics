@@ -5,7 +5,7 @@ export const selectCustomerState = createFeatureSelector<fromCustomer.CustomerSt
     fromCustomer.customerFeatureKey
 );
 
-export const selectCustomers = createSelector(
+export const SelectCustomers = createSelector(
     selectCustomerState,
     (state:fromCustomer.CustomerState)=>state.customers
 );
